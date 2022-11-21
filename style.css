@@ -1,0 +1,155 @@
+* { 
+    margin: 0px; 
+    padding: 0px; 
+    box-sizing: border-box; /*O tamanho da caixa será a partir da borda. Assim ele não contará o padding*/
+}  
+
+:root {
+    --card-title-border-color: #746615;
+    --card-color-primary: #f7dd43;
+    --card-bg-color: #1d1c19;
+    --bg: url(./assets/bg-yellow.svg);
+  } 
+
+  body.green {
+    --card-title-border-color: #047c3f;
+    --card-color-primary: #047c3f;
+    --card-bg-color: #1a1f1b;
+    --bg: url(./assets/bg-green.svg);
+  }
+
+ul { 
+    list-style: none;
+}
+body {  
+    display: flex; 
+    justify-content: center; 
+    background: #121214;
+    background-image: url(./assets/bg.svg);
+    background-position-x: center;
+    /*eixo horizontal*/
+    background-position-y: -715px;
+    /*eixo vertical. O valor positivo serve para subir a imagem*/ 
+    height: 1145px;  
+     
+} 
+
+body * { 
+    font-family: 'Roboto', sans-serif;
+}
+
+#app {
+
+    width: fit-content;
+    margin: 3.31rem auto;
+}
+
+header { 
+    margin-bottom: 3.93rem; 
+    text-align: center;
+    
+} 
+
+#cards { 
+    display: flex; 
+    flex-direction: column; 
+    gap: 2rem; /*espaço entre elementos*/
+}
+
+.card {
+    padding: 1rem 1.43rem; 
+    text-align: center; 
+    background: #1d1c19;  
+    border-bottom: 0.125rem solid #f7dd43; 
+    border-radius: 0.375rem; 
+    opacity: 0;
+    animation: appear 0.2s forwards; 
+    
+    
+} 
+.card h2 {  
+    display: flex; 
+    justify-content: center; 
+    align-items: center;
+    padding: 0.5rem 1rem; 
+    border: 0.06rem solid #746615;
+    border-radius: 0.37rem; 
+    gap: 1rem;  /*O gap faz o espaço entre os elementos*/
+    width: fit-content; 
+    margin-inline: auto; /*espaço é margin*/
+    margin-bottom: 3.31rem;  
+    color: #f7dd43;
+} 
+
+.card h2 span { 
+    color: white;  
+    font-size: 0.87rem; 
+    text-transform: uppercase;
+    
+} 
+
+.card ul { 
+    display: flex; 
+    flex-direction: column; 
+    gap: 1.5rem; 
+    width: 16.87rem;
+}
+
+.card ul li strong { 
+    color: #E1E1E6;
+
+} 
+
+.card ul li { 
+    display: flex; 
+    align-items: center; 
+    justify-content: space-between; 
+    font-weight: 900;
+    font-size: 2.25rem;
+    line-height: 125%;
+     
+}  
+
+.card ul li + li { 
+    padding-top: 1.5rem; 
+    border: 1px solid #323238;
+}
+
+.card ul li strong {
+    font-weight: 900;
+    font-size: 2.25rem;
+    line-height: 125%;
+    text-align: center;
+    color: #E1E1E6;
+  } 
+
+.card h2:hover,
+.card ul li strong:hover,
+.card ul li img:hover {
+  transform: scale(1.1);
+} 
+
+.card h2,
+.card ul li strong,
+.card ul li img {
+  transition: transform 0.3s;
+} 
+
+@keyframes appear {
+    0% {
+      transform: translateY(-50px);
+      opacity: 0;
+    }
+  
+    100% {
+      opacity: 1;
+    }
+  } 
+
+  @media (min-width: 700px) {
+    #cards {
+      max-width: 670px;
+      flex-direction: row;
+      flex-wrap: wrap;
+    }
+  } 
